@@ -10,14 +10,35 @@
             Pretty Print your JSON
             </div>
         </h2>
-        <pre>{{ pretty }}</pre>
+        
+        {% try %}
+            {% if error %}
+            <div class="ui negative message">
+                  <div class="header">
+                    Error
+                  </div>
+                  <p>There was an error - please try again.</p>
+            </div>
+            {% end %}
+        {% except %}
+        {% end %}
+        
+        {% if pretty %}
+        <div class="ui positive message">
+              <div class="header">
+                Success!
+              </div>
+              <pre>{{ pretty }}</pre>
+        </div>
+        {% end %}
+        
         <form method="post">
             <div class="ui form">
                 <div class="field">
                     <label>JSON</label>
                     <textarea name="input"></textarea>
                 </div>
-                <button class="positive ui button">Submit</button>
+                <button class="teal ui button">Submit</button>
             </div>
         </form>
     </div> 

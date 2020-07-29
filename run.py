@@ -29,12 +29,17 @@ class ConversionHandler(tornado.web.RequestHandler):
 
 class JsonHandler(tornado.web.RequestHandler):
     def post(self):
+        error = False
         json_input = self.get_argument("input")
         pretty = json_formatter(json_input)
-        self.render("templates/json_formatter.html", pretty = pretty)
+        
+        if pretty is None:
+            error = True
+        
+        self.render("templates/json_formatter.html", pretty = pretty, error = error)
 
     def get(self):
-        pretty = ""
+        pretty = None
         self.render("templates/json_formatter.html", pretty = pretty)
 
 class HashHandler(tornado.web.RequestHandler):
@@ -45,7 +50,7 @@ class HashHandler(tornado.web.RequestHandler):
         self.render("templates/hasher.html", hash = hash)
 
     def get(self):
-        hash = ""
+        hash = None
         self.render("templates/hasher.html", hash = hash)
         
 class GeoHandler(tornado.web.RequestHandler):
@@ -61,6 +66,7 @@ class GeoHandler(tornado.web.RequestHandler):
 def make_app():
     return tornado.web.Application([
         (r"/", IndexHandler),
+        (r"/static/(.*)", tornado.web.StaticFileHandler, {"path": "static"}),
         (r"/username-generator", UsernameHandler),
         (r"/password-generator", PasswordHandler),
         (r"/unit-converter", ConversionHandler),

@@ -10,6 +10,18 @@
             Hash your content!
             </div>
         </h2>
+        
+
+        
+        {% if hash %}
+        <div class="ui positive message">
+              <div class="header">
+                Success
+              </div>
+              <p>{{ hash }}</p>
+        </div>
+        {% end %}
+        
         <form method="post">
             <div class="ui form">
                 <select name="hash_choice" class="ui fluid selection dropdown">
@@ -20,16 +32,12 @@
                     <option value="base64_dec">Base64 Decode</option>
                 </select>
                 <div class="field">
-                    <textarea name="input" placeholder="Your plaintext goes here"></textarea>
+                    <textarea name="input" id="hash_textarea" placeholder="Your plaintext goes here"></textarea>
                 </div>
-                <button class="positive ui button">Generate</button>
+                <button class="teal ui button">Generate</button>
             </div>
         </form>
-        <div class="item">
-            <div class="content">
-                <p>{{ hash }}</p>                       
-            </div>
-        </div>
+     
     </div> 
 </div>
 
