@@ -45,5 +45,5 @@ def password_generator():
 
     
 
-    return mixed_char_password, three_word_password, two_word_and_char_password
+    return [mixed_char_password, three_word_password, two_word_and_char_password]
     

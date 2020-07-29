@@ -1,8 +1,26 @@
 {% extends "layout.html" %}
 
-
 {% block body %}
                
-
+<div class="ui sixteen column doubling stackable grid container" id="main_body">
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">
+            <i class="code icon"></i>
+            <div class="content">
+            Pretty Print your JSON
+            </div>
+        </h2>
+        <pre>{{ pretty }}</pre>
+        <form method="post">
+            <div class="ui form">
+                <div class="field">
+                    <label>JSON</label>
+                    <textarea name="input"></textarea>
+                </div>
+                <button class="positive ui button">Submit</button>
+            </div>
+        </form>
+    </div> 
+</div>
 
 {% end %}

@@ -1,8 +1,36 @@
 {% extends "layout.html" %}
 
-
 {% block body %}
                
-
+<div class="ui sixteen column doubling stackable grid container" id="main_body">
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">
+            <i class="slack hash icon"></i>
+            <div class="content">
+            Hash your content!
+            </div>
+        </h2>
+        <form method="post">
+            <div class="ui form">
+                <select name="hash_choice" class="ui fluid selection dropdown">
+                    <option value="">Choose hash!</option>
+                    <option value="md5">MD5</option>
+                    <option value="sha_256">SHA-256</option>
+                    <option value="base64_enc">Base64 Encode</option>
+                    <option value="base64_dec">Base64 Decode</option>
+                </select>
+                <div class="field">
+                    <textarea name="input" placeholder="Your plaintext goes here"></textarea>
+                </div>
+                <button class="positive ui button">Generate</button>
+            </div>
+        </form>
+        <div class="item">
+            <div class="content">
+                <p>{{ hash }}</p>                       
+            </div>
+        </div>
+    </div> 
+</div>
 
 {% end %}

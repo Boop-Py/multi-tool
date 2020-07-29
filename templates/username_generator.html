@@ -1,8 +1,25 @@
 {% extends "layout.html" %}
 
-
-{% block body %}
-               
-  {{ username }}
-
+{% block body %}   
+<div class="ui sixteen column doubling stackable grid container" id="main_body">               
+    <div class="ui raised very padded text container segment">   
+        <h2 class="ui header">
+            <i class="user icon"></i>
+            <div class="content">Random Username Generator</div>
+        </h2>       
+        <div class="ui items">           
+            {% for item in username %}
+                <div class="item">
+                    <div class="middle aligned content">
+                        <p class="header">{{ item }}</p>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+            {% end %}
+        </div>
+        <button class="ui teal icon button">
+            <a class="item" href="/username-generator"><i class="white redo icon"></i></a>
+        </button>
+    </div>
+</div>
 {% end %}

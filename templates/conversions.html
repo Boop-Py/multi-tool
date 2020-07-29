@@ -1,12 +1,160 @@
 {% extends "layout.html" %}
-
+{% block head %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js"></script>
+{% end %}
 
 {% block body %}
-               
-<p>{{ time }}</p>
-<p>{{ weight }}</p>
-<p>{{ length }}</p>
-<p>{{ temperature }}</p>
-<p>{{ volume }}</p>
+
+{{ temp }}
+
+
+<select class="ui dropdown">
+    <option value="">Category</option>
+    <option value="Length">Length</option>
+    <option value="Mass">Mass</option>
+    <option value="Temperature">Temperature</option>
+</select>
+
+
+<!--Temperature Form-->
+<div class="ui placeholder segment">
+    <div class="ui two column very relaxed grid">
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" value="C">Celsius (C)</div>
+                        <div class="item" value="K">Kelvin (K)</div>
+                        <div class="item" value="F">Fahrenheit (F)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" value="C">Celsius (C)</div>
+                        <div class="item" value="K">Kelvin (K)</div>
+                        <div class="item" value="F">Fahrenheit (F)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical divider">
+        <i class="massive angle double right icon"></i>
+        <h5>Temperature</h5>
+    </div>
+</div>
+
+<!--Length Form-->
+<div class="ui placeholder segment">
+    <div class="ui two column very relaxed grid">
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" value="mm">Millimetre (mm)</div>
+                        <div class="item" value="cm">Centimetre (cm)</div>
+                        <div class="item" value="m">Metre (m)</div>
+                        <div class="item" value="km">Kilometre (km)</div>
+                        <div class="item" value="μm">Micrometre (μm)</div>
+                        <div class="item" value="nm">Nanometre (nm)</div>
+                        <div class="item" value="yd">Yard (yd)</div>
+                        <div class="item" value="ft">Foot (ft)</div>
+                        <div class="item" value="in">Inch (in)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" value="mm">Millimetre (mm)</div>
+                        <div class="item" value="cm">Centimetre (cm)</div>
+                        <div class="item" value="m">Metre (m)</div>
+                        <div class="item" value="km">Kilometre (km)</div>
+                        <div class="item" value="μm">Micrometre (μm)</div>
+                        <div class="item" value="nm">Nanometre (nm)</div>
+                        <div class="item" value="yd">Yard (yd)</div>
+                        <div class="item" value="ft">Foot (ft)</div>
+                        <div class="item" value="in">Inch (in)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical divider">
+        <i class="big angle double right icon"></i>
+        <h5>Length</h5>
+    </div>
+</div>
+
+<!--Weight Form-->
+<div class="ui placeholder segment">
+    <div class="ui two column very relaxed grid">
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" name="g">Gram (g)</div>
+                        <div class="item" name="kg">Kilogram (kg)</div>
+                        <div class="item" name="mg">Milligram (mg)</div>
+                        <div class="item" name="μg">Microgram (μg)</div>
+                        <div class="item" name="t">Metric Tonne (t)</div>
+                        <div class="item" name="T">Imperial/US Ton (T)</div>
+                        <div class="item" name="st">Stone (st)</div>
+                        <div class="item" name="lb">Pound (lb)</div>
+                        <div class="item" name="oz">Ounce (oz)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui right labeled input">
+                <input type="text" placeholder="Units">
+                <div class="ui simple dropdown label">
+                    <div class="text">Select</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item" name="g">Gram (g)</div>
+                        <div class="item" name="kg">Kilogram (kg)</div>
+                        <div class="item" name="mg">Milligram (mg)</div>
+                        <div class="item" name="μg">Microgram (μg)</div>
+                        <div class="item" name="t">Metric Tonne (t)</div>
+                        <div class="item" name="T">Imperial/US Ton (T)</div>
+                        <div class="item" name="st">Stone (st)</div>
+                        <div class="item" name="lb">Pound (lb)</div>
+                        <div class="item" name="oz">Ounce (oz)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui vertical divider">
+        <i class="massive angle double right icon"></i>
+        <h5>Mass</h5>
+    </div>
+</div>
+
+
+
 
 {% end %}

@@ -2,19 +2,21 @@
 <html lang="en">
     <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
     </head>
     <body>
         <div class="ui teal inverted stackable menu">
             <div class="item">
-                <h4>Stronk</h4>
+                <h4>CodeGadget</h4>
             </div>
-                <a class="item" href="">Home</a>
-                <a class="item" href="">Username Generator</a>
-                <a class="item" href="">Password Generator</a>
-                <a class="item" href="">JSON formatter</a>
-                <a class="item" href="">Unit Conversion</a>
+                <a class="item" href="/">Home</a>
+                <a class="item" href="/username-generator">Username Generator</a>
+                <a class="item" href="/password-generator">Password Generator</a>
+                <a class="item" href="/json-formatter">JSON Formatter</a>
+                <a class="item" href="/unit-converter">Unit Converter</a>
+                <a class="item" href="/ip-geolocator">IP Geolocator</a>
+                <a class="item" href="/hasher">Hasher</a>
         </div>
-        {% block body %}
-        {% end %}
+        {% block body %}{% end %}
     </body>
 </html>
