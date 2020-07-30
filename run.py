@@ -44,10 +44,15 @@ class JsonHandler(tornado.web.RequestHandler):
 
 class HashHandler(tornado.web.RequestHandler):
     def post(self):
+        error = False
         hash_choice = self.get_argument("hash_choice")
         input = self.get_argument("input")
         hash = hasher(hash_choice, input)
-        self.render("templates/hasher.html", hash = hash)
+        
+        if hash is None:
+            error = True
+            
+        self.render("templates/hasher.html", hash = hash, input = input, error = error)
 
     def get(self):
         hash = None

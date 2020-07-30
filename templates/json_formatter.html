@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-
 {% block body %}
                
 <div class="ui sixteen column doubling stackable grid container" id="main_body">
@@ -7,38 +6,35 @@
         <h2 class="ui header">
             <i class="code icon"></i>
             <div class="content">
-            Pretty Print your JSON
+                Pretty Print your JSON
             </div>
         </h2>
-        
         {% try %}
             {% if error %}
             <div class="ui negative message">
-                  <div class="header">
+                <div class="header">
                     Error
-                  </div>
-                  <p>There was an error - please try again.</p>
+                </div>
+                <p>There was an error - please try again.</p>
             </div>
             {% end %}
         {% except %}
-        {% end %}
-        
+        {% end %}       
         {% if pretty %}
-        <div class="ui positive message">
-              <div class="header">
-                Success!
-              </div>
-              <pre>{{ pretty }}</pre>
+        <div class="ui message">
+            <div class="header">
+                Prettified:
+            </div>
+            <pre>{{ pretty }}</pre>
         </div>
         {% end %}
-        
         <form method="post">
             <div class="ui form">
                 <div class="field">
                     <label>JSON</label>
                     <textarea name="input"></textarea>
                 </div>
-                <button class="teal ui button">Submit</button>
+                <button class="teal ui fluid button">Convert</button>
             </div>
         </form>
     </div> 

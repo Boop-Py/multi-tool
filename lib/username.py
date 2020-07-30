@@ -17,19 +17,15 @@ def username_generator():
 
     # plain version
     plain_username = adj + " " + noun
-    print(plain_username)
 
     # camel cased
     camelcase_username = adj.capitalize() + noun.capitalize()
-    print(camelcase_username)
 
     # with underscore
     underscored_username = adj + "_" + noun
-    print(underscored_username)
 
     # with numbers
     numbered_username = camelcase_username + str(random.choice(range(1, 9999)))
-    print(numbered_username)
 
     # leetified
     unleet_string = adj + noun
@@ -45,7 +41,5 @@ def username_generator():
                         }
            
     leet_username = unleet_string.translate(str.maketrans(leet_replacements))
-    print(leet_username)
     
- 
     return [plain_username, camelcase_username, underscored_username, numbered_username, leet_username]

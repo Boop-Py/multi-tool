@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
-
 {% block body %}
-               
+             
 <div class="ui sixteen column doubling stackable grid container" id="main_body">
     <div class="ui raised very padded text container segment">
         <h2 class="ui header">
@@ -10,18 +9,23 @@
             Hash your content!
             </div>
         </h2>
-        
-
-        
+        {% try %}
+            {% if error %}
+            <div class="ui negative message">
+                <div class="header">
+                    Error
+                </div>
+                <p>There was an error - please try again.</p>
+            </div>
+            {% end %}
+        {% except %}
+        {% end %}
         {% if hash %}
-        <div class="ui positive message">
-              <div class="header">
-                Success
-              </div>
-              <p>{{ hash }}</p>
+        <div class="ui message">
+            <p>Input: {{ input }}</p>
+            <p>{{ hash }}</p>
         </div>
         {% end %}
-        
         <form method="post">
             <div class="ui form">
                 <select name="hash_choice" class="ui fluid selection dropdown">
@@ -34,10 +38,9 @@
                 <div class="field">
                     <textarea name="input" id="hash_textarea" placeholder="Your plaintext goes here"></textarea>
                 </div>
-                <button class="teal ui button">Generate</button>
+                <button class="teal ui fluid button">Generate</button>
             </div>
-        </form>
-     
+        </form>    
     </div> 
 </div>
 

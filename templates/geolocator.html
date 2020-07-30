@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+               
+<div class="ui sixteen column doubling stackable grid container" id="main_body">
+    <div class="ui raised very padded text container segment">
+        <h2 class="ui header">
+            <i class="map marker alternate icon"></i>
+            <div class="content">
+            Locate IP addresses!
+            </div>
+        </h2>
+        <pre>{{ ip }}</pre>  
+        <form method="post">
+            <div class="ui form">
+                <div class="field">
+                    <input type="text" placeholder="Input IP address here, eg: 8.8.8.8" name="input">
+                </div>
+                <button class="teal ui fluid button">Lookup</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+{% end %}

@@ -1,5 +1,57 @@
 {% extends "layout.html" %}
-
 {% block body %}
-               
+
+<div class="ui container" id="main_body">
+    <div class="ui three stackable cards">
+        <a class="teal ui card" href="/username-generator">
+            <div class="center aligned image">
+                <i class="massive black user icon"></i>
+            </div>
+            <div class="center aligned content">
+                <div class="header">Username Generator</div>
+            </div>
+        </a>
+        <a class="teal ui card" href="/password-generator">
+            <div class="center aligned image">
+                <i class="massive black lock icon"></i>
+            </div>
+            <div class="center aligned content">
+                <div class="header">Password Generator</div>
+            </div>
+        </a>
+        <a class="teal ui card" href="/json-formatter">
+            <div class="center aligned image">
+                <i class="massive black code icon"></i>
+            </div>
+            <div class="center aligned content">
+                <div class="header">JSON Formatter</div>
+            </div>
+        </a>  
+        <a class="teal ui card" href="/ip-geolocator">
+            <div class="center aligned image">
+                <i class="massive black map marker alternate icon"></i>
+            </div>
+            <div class="center aligned content">
+                <div class="header">IP Geolocator</div>
+            </div>
+        </a>
+        <a class="teal ui card" href="/hasher">
+            <div class="center aligned image">
+                <i class="massive black slack hash icon"></i>
+            </div>
+            <div class="center aligned content">
+                <div class="header">Hasher</div>
+            </div>
+
+        </a>
+        <a class="teal ui card" href="">
+            <div class="center aligned image">
+                <i class="massive black balance scale icon"></i>
+            </div>
+            <div class="content">
+                <div class="ui red ribbon label">Coming Soon!</div>
+            </div>
+        </a>         
+    </div> 
+</div>              
 {% end %}
