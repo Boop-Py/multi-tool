@@ -22,6 +22,7 @@ This runs on port 8888
 - IP Geolocator
 - Add screenshots to git
 * check how much linecache uses on memory
+- write up instr for maxmind
 
 ## Notes
 Noun and Adj lists recieved from: http://www.ashley-bovan.co.uk/words/partsofspeech.html

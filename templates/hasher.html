@@ -23,17 +23,17 @@
         {% if hash %}
         <div class="ui message">
             <p>Input: {{ input }}</p>
-            <p>{{ hash }}</p>
+            <p>{{ hash_choice }}: {{ hash }}</p>
         </div>
         {% end %}
         <form method="post">
             <div class="ui form">
                 <select name="hash_choice" class="ui fluid selection dropdown">
                     <option value="">Choose hash!</option>
-                    <option value="md5">MD5</option>
-                    <option value="sha_256">SHA-256</option>
-                    <option value="base64_enc">Base64 Encode</option>
-                    <option value="base64_dec">Base64 Decode</option>
+                    <option value="MD5">MD5</option>
+                    <option value="SHA-256">SHA-256</option>
+                    <option value="Base64-Encoded">Base64 Encode</option>
+                    <option value="Base64-Decoded">Base64 Decode</option>
                 </select>
                 <div class="field">
                     <textarea name="input" id="hash_textarea" placeholder="Your plaintext goes here"></textarea>

@@ -44,15 +44,16 @@ class JsonHandler(tornado.web.RequestHandler):
 
 class HashHandler(tornado.web.RequestHandler):
     def post(self):
+        # no error as a default
         error = False
         hash_choice = self.get_argument("hash_choice")
         input = self.get_argument("input")
-        hash = hasher(hash_choice, input)
-        
+        hash = hasher(hash_choice, input)  
+        # if nothing is presented, show the error message
         if hash is None:
             error = True
             
-        self.render("templates/hasher.html", hash = hash, input = input, error = error)
+        self.render("templates/hasher.html", hash = hash, hash_choice = hash_choice, input = input, error = error)
 
     def get(self):
         hash = None
@@ -66,6 +67,7 @@ class GeoHandler(tornado.web.RequestHandler):
 
     def get(self):
         output = ""
+        output = geo_locator(".")
         self.render("templates/geolocator.html", ip = output)
 
 def make_app():
