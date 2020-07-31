@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-
+{% block title %}Username Generator | CodeGadget{% end %}
 {% block body %}   
 <div class="ui sixteen column doubling stackable grid container" id="main_body">               
     <div class="ui raised very padded text container segment">   
@@ -16,10 +16,8 @@
                 </div>
                 <div class="ui divider"></div>
             {% end %}
-        </div>
-        <button class="ui fluid teal icon button">
-            <a class="item button_a" href="/username-generator"><i class="white redo icon"></i>Regenerate</a>
-        </button>
+        </div>      
+        <a class="ui fluid teal button button_a" href="/username-generator"><i class="white redo icon"></i>Regenerate</a>
     </div>
 </div>
 {% end %}

@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block title %}Geo-Locator | CodeGadget{% end %}
 {% block body %}
                
 <div class="ui sixteen column doubling stackable grid container" id="main_body">
@@ -9,7 +10,31 @@
             Locate IP addresses!
             </div>
         </h2>
-        <pre>{{ ip }}</pre>  
+        {% try %}
+            {% if error %}
+            <div class="ui negative message">
+                <div class="header">
+                    Error
+                </div>
+                <p>There was an error - please try again.</p>
+            </div>
+            {% end %}
+        {% except %}
+        {% end %}       
+        {% if locations %}
+        <div class="ui message">
+            <div class="header result_header">
+                Location of {{ ip }}:
+            </div>
+            <div>
+            <p>Country: {{ locations["country"] }}</p>
+            <p>Area: {{ locations["area"] }}</p>
+            <p>City/Town: {{ locations["city"] }}</p>
+            <p>Postal Code: {{ locations["postal_code"] }}</p>
+            <p>Lat: {{ locations["latitude"] }} / Long: {{ locations["longitude"] }}</p>
+            </div>
+        </div>
+        {% end %}
         <form method="post">
             <div class="ui form">
                 <div class="field">
@@ -18,7 +43,11 @@
                 <button class="teal ui fluid button">Lookup</button>
             </div>
         </form>
+        <div class="ui blue floating message">This product includes GeoLite2 data created by MaxMind, available from
+            <a target="_blank" href="https://www.maxmind.com">https://www.maxmind.com</a>
+        </div>
     </div>
+
   </div>
 
 {% end %}
