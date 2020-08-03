@@ -1,12 +1,20 @@
 import tornado.ioloop
 import tornado.web
+import argparse
 from lib.username import *
 from lib.password import *
 from lib.json import *
 from lib.locator import *
 from lib.hash import *
 
+parser = argparse.ArgumentParser()
 
+parser.add_argument("--port",
+                   action = "store",
+                   type = int,
+                   required = True,
+                   help = "Allows you to specify the port")                 
+args = parser.parse_args()                       
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):    
@@ -92,10 +100,10 @@ def make_app():
         (r"/json-formatter", JsonHandler),
         (r"/hasher", HashHandler),
         (r"/ip-geolocator", GeoHandler)
-    ], debug=True)
+    ], debug = False)
 
 if __name__ == "__main__":
     app = make_app()
-    print("Running on port 8888")
-    app.listen(8888)
+    print("Running on port " + str(args.port))
+    app.listen(args.port)
     tornado.ioloop.IOLoop.current().start()
